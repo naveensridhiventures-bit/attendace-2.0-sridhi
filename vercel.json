@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "@vercel/python@4.3.1"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/dashboard/unlock", "destination": "/api/dashboard/unlock.py" },
+    { "source": "/api/hr/pending_requests", "destination": "/api/hr/pending_requests.py" },
+    { "source": "/api/hr/decide", "destination": "/api/hr/decide.py" },
+    { "source": "/api/push/subscribe", "destination": "/api/push/subscribe.py" },
+    { "source": "/api/notifications/check", "destination": "/api/notifications/check.py" },
+    { "source": "/api/(.*)", "destination": "/api/$1.py" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+
